@@ -22,13 +22,65 @@
 	<link rel="stylesheet" href="css/media.css" />
 </head>
 <body>
+
+<form id="myForm">
+			<h2>Holiday API</h2>
+			<label>
+				<span>Выберите страну:</span>
+				<select name="country">
+					<option value="us">Соединенные Штаты Америки</option>
+					<option value="be">Бельгия</option>
+					<option value="br">Бразилия</option>
+					<option value="ca">Канада</option>
+					<option value="cz">Чешская Республика</option>
+					<option value="fr">Франция</option>
+					<option value="gb">Великобритания</option>
+					<option value="no">Норвегия</option>
+					<option value="sk">Словакия</option>
+					<!-- <option value="sl"></option> -->
+
+				</select>
+			</label>
+			<label>
+				<span>Выберите год:</span>
+				<input type="number" name="year" max="2015" min="1970" required placeholder="2015"/>
+			</label>
+			<div class="button_wrap">
+				<button class="button btn_green">Отправить заявку</button>
+			</div>
+</form>
+
+<div class="container">
+
+<div class="inform">
+		<div class="date">Дата</div>
+		<div class="name">Праздник</div>
+		<div class="country">Страна:</div>
+	</div>
+
+	<div class="holiday_list">
+		
+
+
+	</div>
+
+	<div class="button_wrap next">
+		<button class="button btn_green">Следующий год...</button>
+	</div>
+
+	
+
+</div>
+
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
 	<script src="libs/html5shiv/html5shiv.min.js"></script>
 	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
 	<script src="libs/respond/respond.min.js"></script>
 	<![endif]-->
+
 	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
+	<!--js file>
 	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
 	<script src="libs/fancybox/jquery.fancybox.pack.js"></script>
 	<script src="libs/waypoints/waypoints-1.6.2.min.js"></script>
@@ -38,7 +90,14 @@
 	<script src="libs/countdown/jquery.countdown.min.js"></script>
 	<script src="libs/countdown/jquery.countdown-ru.js"></script>
 	<script src="libs/landing-nav/navigation.js"></script>
-	<script src="js/common.js"></script>
+
+	<script src="infinite-ajax-scroll-master/src/jquery-ias.js"></script>
+	<!js file-->
+
+	<script src="jscroll/jquery.jscroll.min.js"></script>
+	<script src="js/common1.js"></script>
+
+
 	<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
 	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
 </body>

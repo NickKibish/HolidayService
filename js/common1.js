@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+$('.next').hide();
 
 	$("#myForm").submit(function(e) {
 		e.preventDefault();
@@ -7,7 +8,7 @@ $(document).ready(function() {
 		var year = $("input[name='year']").val();
 		var request = "http://holidayapi.com/v1/holidays?year=" + year + "&country=" + country;
 		var holiday_list = $(".holiday_list");
-		var informHoliday = $(".inform")
+		var informHoliday = $(".inform");
 		informHoliday.find('.country').text('Страна: ' +  $("select").find('option:selected').text());
 
  	$.ajax(request, {
@@ -18,7 +19,7 @@ $(document).ready(function() {
 				
 				$.each(value, function(i, val) {    // обрабатываем полученные данные
 
-					holiday_list.append('<div class="wrap_item"><div class="date"></div><div class="name"></div></div></div>')
+					holiday_list.append('<div class="wrap_item"><div class="date"></div><div class="name"></div></div></div>');
 
 					holiday_list.find('.date:last').text(val.date);
 					holiday_list.find('.name:last').text(val.name); 
@@ -33,22 +34,45 @@ $(document).ready(function() {
 		}
 	});
 		
-	$("select option:first").attr('selected','selected');
-	$("input[name='year']").val('');
-	$('.holiday_list div.wrap_item').remove();
-
+	// $("select option:first").attr('selected','selected');
+	// $("input[name='year']").val('');
+	  $('.holiday_list div.wrap_item').remove();
+		$('.next').fadeIn('1000');
 	});
 
-var ias = jQuery.ias({
-			container:  '.holiday_list',
-			item:       '.wrap_item',
-			pagination: '#pagination',
-			next:       '.next'
-		});
+$('.next').click(function(e) {
+	e.preventDefault();
+	var year = + $("input[name='year']").val() + 1;
+	$("input[name='year']").val(year);
+	var country1 = $("select").find('option:selected').attr("value");
+	var year_next = year;
+	var request1 = "http://holidayapi.com/v1/holidays?year=" + year_next + "&country=" + country1;
+	var holiday_list1 = $(".holiday_list");
 
-jQuery.ias().next();
+$.ajax(request1, {
+		success: function(data) {
 
+			for (var key in data.holidays) {
+				var value = data.holidays[key];
+				
+				$.each(value, function(i, val) {    // обрабатываем полученные данные
 
+					holiday_list1.append('<div class="wrap_item"><div class="date"></div><div class="name"></div></div></div>');
+
+					holiday_list1.find('.date:last').text(val.date);
+					holiday_list1.find('.name:last').text(val.name); 
+				
+				});
+				
+			}
+		}, error: function() {
+			alert("Something was wrong");
+		}
+});
+
+// $('holiday_list1').jscroll();
+
+});
 
 	//Таймер обратного отсчета
 	//Документация: http://keith-wood.name/countdown.html

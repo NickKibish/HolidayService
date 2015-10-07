@@ -1,29 +1,121 @@
 *::-webkit-input-placeholder {
 	color: #666;
-	opacity: 1;
+	opacity: .5;
 }
 *:-moz-placeholder {
 	color: #666;
-	opacity: 1;
+	opacity: .5;
 }
 *::-moz-placeholder {
 	color: #666;
-	opacity: 1;
+	opacity: .5;
 }
 *:-ms-input-placeholder {
 	color: #666;
-	opacity: 1;
+	opacity: .5;
 }
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-	
+	color: red; 
+  box-shadow: 0 0 0 2px #9B1818;
+  border-color: #9B1818;
 }
 body input:required:valid,
 body textarea:required:valid {
-	
+	color: green;
 }
+
 body {
 	font-family: "RobotoRegular", sans-serif;
 	font-size: 16px;
+}
+
+form {
+  background-color: #f7f7f7;
+  padding: 25px 30px;
+  border:  #67bc5c 5px solid;
+  border-radius: 5px;
+  width: 400px;
+  margin: 20px auto;
+}
+form h2 {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-family: "RobotoBold", sans-serif;
+  font-size: 22px;
+  line-height: 22px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+form label {
+  display: block;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+}
+form input, select {
+  display: block;
+  line-height: 40px;
+  height: 40px;
+  border: #7F7E7E 1px solid;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
+  width: 100%;
+  text-indent: 10px;
+  font-size: 20px;
+  margin-top: 3px;
+
+}
+form input:focus, select:focus {
+  box-shadow: 0 0 0 2px #67bc5c;
+  border-radius: 3px;
+  border-color: #67bc5c;
+}
+.button {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 32px;
+  background-color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px; 
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "RobotoBold", sans-serif;
+}
+a.button {
+  color: #fff;
+  text-decoration: none; 
+}
+.button.btn_green {
+  background-color: #67bc5c;
+}
+.button_wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.next {
+  text-align: left; 
+}
+
+.inform .date {
+  margin-right: 60px;
+}
+.country {
+  display: inline-block;
+  margin-left: 20px;
+}
+.date {
+  display: inline-block;
+  margin-right: 20px;
+} 
+.name {
+  display: inline-block;
 }
